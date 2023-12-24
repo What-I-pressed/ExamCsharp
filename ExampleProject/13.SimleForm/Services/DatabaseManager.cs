@@ -93,5 +93,40 @@ namespace _13.SimleForm.Services
             //виконати комнаду до сервера
             sqlCommand.ExecuteNonQuery();
         }
+
+        public void CreateDatabase(string dbName)
+        {
+            var isEsixt = IsExistDatabase(dbName);
+            if (isEsixt)
+            {
+                MessageBox.Show("База даних з таки ім'ям уже існує!");
+                return;
+            }
+            string sql = $"CREATE DATABASE {dbName};";
+            SqlCommand sqlCommand = _con.CreateCommand(); //окманди виконуєються на основі підлкючення
+            sqlCommand.CommandText = sql; //текст команди
+            //виконати комнаду до сервера
+            sqlCommand.ExecuteNonQuery();
+            MessageBox.Show("Базу даних успішно створено!");
+        }
+
+        public void RenameDatabase(string databaseName, string NewDatabaseName)
+        {
+            if (IsExistDatabase(databaseName))
+            {
+                string sql = $"Alter Database {databaseName} Modify NAME = {NewDatabaseName};";
+                SqlCommand sqlCommand = _con.CreateCommand(); //окманди виконуєються на основі підлкючення
+                sqlCommand.CommandText = sql; //текст команди
+                                              //виконати комнаду до сервера
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Базу даних успішно перейменовано!");
+            }
+            else
+            {
+                MessageBox.Show("Такої бази данних не існує!");
+            }
+        }
     }
+
+    
 }
