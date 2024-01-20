@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuHead = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,8 +101,8 @@
             // 
             this.dgvDatabases.AllowUserToAddRows = false;
             this.dgvDatabases.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dgvDatabases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dgvDatabases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatabases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatabases.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColName});
@@ -114,6 +114,7 @@
             this.dgvDatabases.RowTemplate.Height = 29;
             this.dgvDatabases.Size = new System.Drawing.Size(912, 296);
             this.dgvDatabases.TabIndex = 4;
+            this.dgvDatabases.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatabases_CellDoubleClick_1);
             // 
             // ColName
             // 

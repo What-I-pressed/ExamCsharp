@@ -75,5 +75,26 @@ namespace _13.SimleForm
             
 
         }
+
+        private void dgvDatabases_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDatabases_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDatabases_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                string databaseName = (string)dgvDatabases.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                TablesForm dlg = new TablesForm();
+                dlg.DatabaseName = databaseName;
+                dlg.ShowDialog();
+            }
+        }
     }
 }
